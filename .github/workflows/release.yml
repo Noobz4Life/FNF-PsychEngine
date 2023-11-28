@@ -9,7 +9,7 @@ jobs:
     name: Build
     uses: ./.github/workflows/main.yml
     with:
-      name: ${{ github.ref_name }}
+      buildFlags: officialBuild
 
   release-windows:
     name: Release windowsBuild.zip
