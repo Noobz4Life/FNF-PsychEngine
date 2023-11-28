@@ -25,7 +25,7 @@ jobs:
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ github.ref_name }}
-        file: linuxBuild
+        file: linuxBuild.zip
         asset_name: Linux64.zip
         overwrite: false
 
@@ -37,12 +37,12 @@ jobs:
     - name: Download Mac artifact
       uses: actions/download-artifact@v3
       with:
-        name: macBuild.zip
+        name: macBuild
     - name: Upload macBuild to release
       uses: svenstaro/upload-release-action@2.5.0
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ github.ref_name }}
-        file: macBuild
+        file: macBuild.zip
         asset_name: Mac64.zip
         overwrite: false
