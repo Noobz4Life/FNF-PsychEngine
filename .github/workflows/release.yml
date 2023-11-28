@@ -19,7 +19,7 @@ jobs:
     - name: Download Windows artifact
       uses: actions/download-artifact@v3
       with:
-        name: windowsBuild.zip
+        name: windowsBuild
     - name: Upload windowsBuild.zip to release
       uses: svenstaro/upload-release-action@2.5.0
       with:
@@ -37,7 +37,7 @@ jobs:
     - name: Download Linux artifact
       uses: actions/download-artifact@v3
       with:
-        name: linuxBuild.zip
+        name: linuxBuild
     - name: Upload linuxBuild.zip to release
       uses: svenstaro/upload-release-action@2.5.0
       with:
@@ -55,7 +55,7 @@ jobs:
     - name: Download Mac artifact
       uses: actions/download-artifact@v3
       with:
-        name: macBuild.zip
+        name: macBuild
     - name: Upload macBuild.zip to release
       uses: svenstaro/upload-release-action@2.5.0
       with:
