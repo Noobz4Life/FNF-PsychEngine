@@ -26,6 +26,7 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ github.ref_name }}
         file: windowsBuild.zip
+        asset_name: Windows64.zip
         overwrite: false
 
   release-linux:
@@ -43,6 +44,7 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ github.ref_name }}
         file: linuxBuild.zip
+        asset_name: Linux64.zip
         overwrite: false
 
   release-mac:
@@ -60,4 +62,5 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         tag: ${{ github.ref_name }}
         file: macBuild.zip
+        asset_name: Mac64.zip
         overwrite: false
