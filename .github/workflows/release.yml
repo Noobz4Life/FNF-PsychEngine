@@ -20,6 +20,9 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: linuxBuild
+    - name: list
+      run:
+        ls
     - name: Upload linuxBuild to release
       uses: svenstaro/upload-release-action@2.5.0
       with:
