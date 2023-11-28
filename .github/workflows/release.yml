@@ -10,24 +10,7 @@ jobs:
     uses: ./.github/workflows/main.yml
     with:
       buildFlags: officialBuild
-
-  release-windows:
-    name: Release windowsBuild.zip
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - name: Download Windows artifact
-      uses: actions/download-artifact@v3
-      with:
-        name: windowsBuild.zip
-    - name: Upload windowsBuild.zip to release
-      uses: svenstaro/upload-release-action@2.5.0
-      with:
-        repo_token: ${{ secrets.GITHUB_TOKEN }}
-        tag: ${{ github.ref_name }}
-        file: windowsBuild.zip
-        overwrite: false
-
+      
   release-linux:
     name: Release linuxBuild.zip
     needs: build
