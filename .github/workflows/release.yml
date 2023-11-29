@@ -12,7 +12,7 @@ jobs:
       buildFlags: officialBuild
       
   release-linux:
-    name: Release linuxBuild.zip
+    name: Release linuxBuild
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -22,7 +22,7 @@ jobs:
         path: build
         name: linuxBuild
     - name: Compress build
-      run:
+      run: |
         sudo apt-get install p7zip-full
         7z a -y -ttar build.tar -w ./build/.
         gzip build.tar
@@ -36,7 +36,7 @@ jobs:
         overwrite: false
 
   release-mac:
-    name: Release macBuild.zip
+    name: Release macBuild
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -46,7 +46,7 @@ jobs:
         path: build
         name: macBuild
     - name: Compress build
-      run:
+      run: |
         sudo apt-get install p7zip-full
         7z a -tzip build.zip -w ./build/.
     - name: Upload macBuild to release
