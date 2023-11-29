@@ -14,6 +14,7 @@ jobs:
   release-windows:
     name: Release windowsBuild
     runs-on: ubuntu-latest
+    needs: build
     steps:
     - name: Download Windows artifact
       uses: actions/download-artifact@v3
@@ -35,6 +36,7 @@ jobs:
   release-linux:
     name: Release linuxBuild
     runs-on: ubuntu-latest
+    needs: build
     steps:
     - name: Download Linux artifact
       uses: actions/download-artifact@v3
@@ -56,6 +58,7 @@ jobs:
   release-mac:
     name: Release macBuild
     runs-on: ubuntu-latest
+    needs: build
     steps:
     - name: Download Mac artifact
       uses: actions/download-artifact@v3
